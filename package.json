@@ -1,0 +1,17 @@
+{
+  "name": "trendsnap-root",
+  "private": true,
+  "packageManager": "yarn@4.0.0",
+  "workspaces": [
+    "api",
+    "web"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach -p run build",
+    "dev": "concurrently -k \"yarn workspace api dev\" \"yarn workspace web dev\"",
+    "test": "yarn workspaces foreach -p run test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
